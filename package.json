@@ -1,0 +1,13 @@
+{
+  "name": "letter-spacing",
+  "main": "./lib/letter-spacing",
+  "version": "0.0.0",
+  "description": "Setting of the letter-spacing will be possible",
+  "repository": "https://github.com/SKAhack/letter-spacing",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}

@@ -1,0 +1,9 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'letter-spacing'
+      'submenu': []
+    ]
+  }
+]
