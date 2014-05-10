@@ -1,7 +1,7 @@
 module.exports =
   packageName: 'letter-spacing'
   configDefaults:
-    'letter-spacing': .1
+    'letter-spacing': 0
 
   activate: (state) ->
     atom.workspaceView.eachEditorView (editorView) =>
