@@ -18,4 +18,6 @@ module.exports =
     return @configDefaults['letter-spacing']
 
   setCssLetterSpacing: (view, value) ->
+    atom.workspace.increaseFontSize()
     view.css('letter-spacing', "#{value}px")
+    atom.workspace.decreaseFontSize()
