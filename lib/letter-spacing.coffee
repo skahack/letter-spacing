@@ -1,15 +1,18 @@
 module.exports =
   packageName: 'letter-spacing'
-  configDefaults:
-    'letter-spacing': 0
+  config:
+    'letter-spacing':
+      default: 0
+      type: 'integer'
 
   activate: (state) ->
-    atom.workspaceView.eachEditorView (editorView) =>
+    atom.workspace.observeTextEditors (editor) =>
+      editorView = atom.views.getView(editor)
+
       @setCssLetterSpacing(editorView, @getLetterSpacing())
 
       atom.config.observe "#{@packageName}.letter-spacing", (value) =>
         @setCssLetterSpacing(editorView, value)
-        editorView.redraw()
 
   getLetterSpacing: ->
     value = atom.config.get("#{@packageName}.letter-spacing")
@@ -18,4 +21,7 @@ module.exports =
     return @configDefaults['letter-spacing']
 
   setCssLetterSpacing: (view, value) ->
-    view.css('letter-spacing', "#{value}px")
+    view.style.letterSpacing = "#{value}px"
+
+  getWorkspace: ->
+    return atom.views.getView(atom.workspace)
