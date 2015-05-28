@@ -3,7 +3,7 @@ module.exports =
   config:
     'letter-spacing':
       default: 0
-      type: 'integer'
+      type: 'number'
 
   activate: (state) ->
     atom.workspace.observeTextEditors (editor) =>
